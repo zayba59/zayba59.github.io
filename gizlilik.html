@@ -1,12 +1,33 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gizlilik Politikası – BOTZAYBA</title>
-<style>body{font-family:Arial,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;color:#0a2350;line-height:1.6}</style></head><body>
-<h1>Gizlilik Politikası</h1><p>Son güncelleme: 27 Ekim 2026</p>
-<p>"BOTZAYBA" Google OAuth uygulaması yalnızca uygulama sahibinin kendi YouTube kanalına video yüklemek amacıyla <code>youtube.upload</code> iznini kullanır.</p>
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gizlilik ve Veri Uygulamaları — BOTZAYBA</title>
+<style>body{font-family:Arial,sans-serif;max-width:820px;margin:42px auto;padding:0 18px;color:#182235;line-height:1.65}a{color:#155dc4}.box{padding:18px;border:1px solid #d7dce5;border-radius:12px;margin:18px 0}small{color:#586273}</style>
+</head>
+<body>
+<h1>Gizlilik ve Veri Uygulamaları</h1>
+<p>Son güncelleme: 4 Kasım 2026</p>
+<p>Önceki sürümde “hiçbir kişisel veri toplanmaz” deniyordu. Bu ifade ZAYBA masaüstü ürünü için doğru değildir. Aşağıdaki bilgiler mevcut kaynak kodunda görülen veri akışını özetler.</p>
+<div class="box">
+<h2>ZAYBA masaüstü uygulaması</h2>
 <ul>
-<li>Başka hiçbir kullanıcının Google veya YouTube verisine erişilmez.</li>
-<li>Hiçbir kişisel veri toplanmaz, satılmaz veya üçüncü taraflarla paylaşılmaz.</li>
-<li>Erişim izni, Google hesabı ayarlarından (myaccount.google.com/permissions) istenildiği zaman kaldırılabilir.</li>
+<li>ZAYBA hesabı ve lisans işlemleri için e-posta, hesap kimliği, isteğe bağlı görünen ad, cihaz kimliği/adı ve plan/abonelik yetkisi Supabase bulut altyapısında işlenir.</li>
+<li>Oturum belirteçleri, uygulama oturumu için cihazda saklanır ve Windows’ta DPAPI ile korunur.</li>
+<li>Binance API anahtarı ve gizli anahtar cihazda DPAPI ile şifrelenir. Uygulama bunları Binance API bağlantısı için kullanır; kaynak kodu bu kimlik bilgilerini ZAYBA Supabase hesabına göndermez.</li>
+<li>Bot ayarları, emir/işlem geçmişi ve uygulama verileri bu bilgisayardaki yerel veritabanında tutulur.</li>
+<li>İndirme sayfası sürüm, indirme adresi ve yayın notlarını Supabase’den ister. Site GitHub Pages üzerinde barındırılır.</li>
 </ul>
-<p>Bu uygulamanın YouTube API Hizmetlerini kullanımı <a href="https://www.youtube.com/t/terms">YouTube Hizmet Şartları</a> ve <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a>'na tabidir.</p>
-<p>İletişim: botzayba@gmail.com</p>
-</body></html>
+</div>
+<div class="box">
+<h2>YouTube OAuth entegrasyonu</h2>
+<p>Google OAuth uygulaması, kanal sahibinin kendi YouTube kanalına video yüklemek için <code>youtube.upload</code> iznini kullanır. Yetkilendirme belirteçleri otomasyonun çalışması için GitHub Actions secrets içinde saklanır; video yükleme işlemi YouTube Data API üzerinden yapılır. Başka kişilerin YouTube verilerine erişim amacı yoktur.</p>
+</div>
+<div class="box">
+<h2>Başvuru ve veri sahibi bilgileri</h2>
+<p>Veri veya hesap başvuruları için <a href="mailto:botzayba@gmail.com">botzayba@gmail.com</a> adresine yazabilirsiniz. Hesap silme veya erişim talebinizde e-posta adresinizi ve talebinizi belirtin; Binance API anahtarınızı e-postayla göndermeyin.</p>
+<p><b>Yayımdan önce tamamlanması gerekenler:</b> veri sorumlusunun tam yasal adı ve adresi, her veri kategorisi için KVKK kapsamındaki işleme şartı ve saklama süresi, Supabase hizmetinin veri bölgesi ve olası yurt dışı aktarım dayanağı mevcut kaynaklardan doğrulanamadı. Bu nedenle bu sayfa mevcut teknik veri akışının özeti olup nihai KVKK aydınlatma metni olarak değerlendirilmemelidir.</p>
+</div>
+<p><a href="https://zayba59.github.io/zayba-download/">Ürün sayfasına dön</a></p>
+</body>
+</html>
