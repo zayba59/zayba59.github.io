@@ -4,22 +4,70 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BOTZAYBA — Binance Spot grid işlem yazılımı</title>
 <meta name="description" content="BOTZAYBA Windows masaüstü grid işlem yazılımı. Hesap, veri kullanımı, gerçek emir ve risk bilgileri.">
-<style>body{font-family:Arial,sans-serif;max-width:820px;margin:42px auto;padding:0 18px;color:#182235;line-height:1.65}a{color:#155dc4}.box{padding:18px;border:1px solid #d7dce5;border-radius:12px;margin:18px 0}small{color:#586273}</style>
+<meta name="color-scheme" content="light">
+<style>
+:root{font-family:Inter,Arial,sans-serif;color:#152033;background:#f5f7fb;line-height:1.6}*{box-sizing:border-box}body{margin:0}.wrap{max-width:960px;margin:auto;padding:28px 20px 56px}header,footer{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}header{padding:12px 0 38px}.brand{font-weight:800;letter-spacing:.12em;font-size:18px}.tag{font-size:12px;color:#637089}.hero{background:#101a2d;color:white;border-radius:20px;padding:38px 28px;text-align:center}.hero p{max-width:690px;margin:0 auto;color:#d9e0ed}.eyebrow{color:#e6c784!important;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}h1{font-size:clamp(34px,6vw,54px);line-height:1.12;margin:8px 0 16px}h2{font-size:25px;line-height:1.2;margin:8px 0 10px}.btn{display:inline-block;background:#e6c784;color:#182236;text-decoration:none;font-weight:750;padding:13px 24px;border-radius:10px;margin:20px 0 6px}.btn[aria-disabled="true"]{opacity:.55;pointer-events:none}.status{font-size:13px;color:#d9e0ed}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:22px 0}.card{background:white;border:1px solid #dfe4ec;border-radius:14px;padding:20px}.card p:last-child{margin-bottom:0}.risk{border-left:4px solid #b87900;background:#fff8e8;padding:16px 18px;border-radius:8px}.muted{color:#5c687c;font-size:14px}a{color:#155dc4}footer{border-top:1px solid #d8deea;margin-top:34px;padding-top:18px;font-size:13px;color:#5c687c}@media(max-width:650px){.grid{grid-template-columns:1fr}.hero{padding:30px 18px}}
+</style>
 </head>
-<body>
-<h1>BOTZAYBA</h1>
-<p><b>Binance Spot için Windows masaüstü grid işlem yazılımı</b></p>
-<div class="box">
-<p>Bot etkinleştirildiğinde, kullanıcı ayarlarına göre gerçek limit emirleri kullanıcının kendi Binance hesabına gönderir. ZAYBA hesabı ve etkin plan/cihaz yetkisi gerekir.</p>
-<p>API anahtarı Windows DPAPI ile bilgisayarda şifrelenir; ZAYBA bulut hesabına gönderilmez. Uygulama hesap e-postası, cihaz ve plan yetkisi bilgilerini Supabase üzerinden işler. Bu yazılım yüksek riskli işlemler yapabilir; getiri garantisi yoktur.</p>
-<p><a href="https://zayba59.github.io/zayba-download/">İndirme ve güncel ürün bilgileri</a> · <a href="https://zayba59.github.io/zayba-download/gizlilik.html">Gizlilik ve veri uygulamaları</a> · <a href="https://zayba59.github.io/zayba-download/risk.html">Risk açıklaması</a> · <a href="https://zayba59.github.io/zayba-download/kullanim-kosullari.html">Kullanım koşulları</a></p>
+<body><div class="wrap">
+<header><div class="brand">BOTZAYBA <span class="tag">WINDOWS · BINANCE SPOT</span></div><a href="#indir">İndir</a></header>
+<main>
+<section class="hero" id="indir">
+<p class="eyebrow">Grid işlem yazılımı</p>
+<h1>Emirleri planla, hesabında izle.</h1>
+<p>BOTZAYBA, kullanıcı ayarlarına göre Binance Spot hesabına gerçek limit emirleri gönderebilen bir Windows masaüstü yazılımıdır. Emir gönderimi botu kullanıcı başlattığında gerçekleşir.</p>
+<a class="btn" id="downloadBtn" href="#" aria-disabled="true">ZAYBA'yı indir</a>
+<div class="status" id="status">Güncel kararlı sürüm kontrol ediliyor…</div>
+<p class="status">Sürüm <b id="version">—</b> · Yayın <b id="published">—</b> · Windows 10/11, 64 bit</p>
+</section>
+<div class="grid">
+<section class="card">
+<h2>Nasıl çalışır?</h2>
+<p>Kullanıcı pariteyi, fiyat aralığını, emir sayısını ve bütçeyi seçer. Bot etkinleştirildiğinde emirleri kullanıcının kendi Binance hesabına iletir. Varlıklar ZAYBA’da tutulmaz.</p>
+<p class="muted">ZAYBA hesabı, etkin plan ve yetkili cihaz gerekir. Bot limiti ve erişim durumu hesap ekranında gösterilir.</p>
+</section>
+<section class="card">
+<h2>API anahtarı ve veriler</h2>
+<p>API anahtarı ve gizli anahtar Windows DPAPI ile bu bilgisayarda şifrelenir. ZAYBA bulut hesabına gönderilmez; uygulama bunları Binance API bağlantısı için kullanır. API anahtarında para çekme izni açmayın.</p>
+<p class="muted">ZAYBA hesabı, e-posta, cihaz ve plan/erişim bilgileri Supabase altyapısında işlenir. Bot ayarları ve işlem geçmişi bu bilgisayardaki uygulama veritabanında tutulur.</p>
+</section>
+<section class="card">
+<h2>İndirme güvenliği</h2>
+<p>İndirme adresi ve sürüm bilgisi Supabase yayın kaydından alınır. Sayfada SHA-256 değeri varsa, dosyayı çalıştırmadan önce karşılaştırın.</p>
+<p class="muted">Windows güvenlik uyarısı çıkarsa korumayı aşmayın. Yayıncı imzası veya dosya kaynağı doğrulanamıyorsa dosyayı çalıştırmayın ve destek e-postasına yazın.</p>
+</section>
+<section class="card">
+<h2>Yasal ve hizmet bilgisi</h2>
+<p>Bu sayfa ürünün teknik işleyişini açıklar; mevzuata uygunluk veya SPK izni konusunda garanti vermez. Yazılımın hukuki sınıflandırması, gerçek işleyiş ve sunum biçimine göre değerlendirilmelidir.</p>
+<p><a href="gizlilik.html">Gizlilik ve veri uygulamaları</a> · <a href="risk.html">Risk açıklaması</a> · <a href="kullanim-kosullari.html">Kullanım koşulları</a></p>
+</section>
 </div>
-<div class="box">
-<h2>YouTube OAuth uygulaması</h2>
-<p>Bu Google OAuth entegrasyonu yalnızca BOTZAYBA kanal sahibinin kendi YouTube kanalına video yükleme otomasyonunda kullanılır. ZAYBA masaüstü uygulaması için kullanılan hesap ve lisans sisteminden ayrıdır.</p>
-<p><a href="gizlilik.html">Gizlilik politikası</a></p>
+<section class="risk">
+<b>Risk uyarısı:</b> Kripto varlık işlemleri yüksek risk taşır; sermayenizin bir kısmını veya tamamını kaybedebilirsiniz. Emir, bağlantı veya iptal işlemleri başarısız olabilir. Durdurma sonrası Binance hesabınızdaki açık emirleri ayrıca kontrol edin. Getiri garantisi yoktur. Bu yazılım kişiye özel yatırım tavsiyesi veya portföy yönetimi sunmaz.
+</section>
+<p class="muted">YouTube OAuth entegrasyonu yalnızca kanal sahibinin kendi kanalına video yükleme otomasyonunda kullanılır; bu uygulamanın hesap ve lisans sisteminden ayrıdır. <a href="gizlilik.html#youtube">Ayrıntılar</a>.</p>
+</main>
+<footer><span>© BOTZAYBA</span><span>İletişim: <a href="mailto:botzayba@gmail.com">botzayba@gmail.com</a></span></footer>
 </div>
-<p>İletişim: <a href="mailto:botzayba@gmail.com">botzayba@gmail.com</a></p>
-<small>Kripto varlık işlemleri yüksek risk taşır. Bu içerik yatırım tavsiyesi değildir.</small>
-</body>
-</html>
+<script>
+const SUPABASE_URL='https://acbthkoylmlsdrvushye.supabase.co';
+const SUPABASE_KEY='sb_publishable_gXdY_35-imdGBSt7pK5s3Q_nDVGLBGn';
+function ver(v){const m=String(v||'').match(/(\d+)\.(\d+)\.(\d+)/);return m?m.slice(1).map(Number):[0,0,0]}
+function cmp(a,b){const x=ver(a.version),y=ver(b.version);for(let i=0;i<3;i++){if(x[i]!==y[i])return y[i]-x[i]}return String(b.published_at||'').localeCompare(String(a.published_at||''))}
+async function load(){
+ const status=document.querySelector('#status');
+ try{
+  const q='/rest/v1/app_releases?select=version,download_url,sha256,notes,published_at&channel=eq.stable&active=eq.true&order=published_at.desc&limit=50';
+  const r=await fetch(SUPABASE_URL+q,{headers:{apikey:SUPABASE_KEY,Accept:'application/json'}});
+  if(!r.ok)throw new Error('Sürüm bilgisi alınamadı.');
+  const rows=await r.json();if(!Array.isArray(rows)||!rows.length)throw new Error('İndirilebilir stable sürüm bulunamadı.');
+  const rel=[...rows].sort(cmp)[0];document.querySelector('#version').textContent='v'+rel.version;
+  document.querySelector('#published').textContent=rel.published_at?new Date(rel.published_at).toLocaleDateString('tr-TR'):'—';
+  const prefix=SUPABASE_URL+'/storage/v1/object/public/zayba-releases/';const url=String(rel.download_url||'');
+  if(!url.startsWith(prefix)||!/\.exe$/i.test(new URL(url).pathname))throw new Error('İndirme adresi doğrulanamadı.');
+  const b=document.querySelector('#downloadBtn');b.href=url;b.setAttribute('download','');b.removeAttribute('aria-disabled');
+  status.textContent='Güncel kararlı sürüm hazır.';
+ }catch(e){status.textContent=e.message+' Destek: botzayba@gmail.com';status.style.color='#ffd1d1'}
+}
+load();
+</script></body></html>
