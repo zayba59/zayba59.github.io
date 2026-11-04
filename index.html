@@ -19,6 +19,7 @@
 <a class="btn" id="downloadBtn" href="#" aria-disabled="true">ZAYBA'yı indir</a>
 <div class="status" id="status">Güncel kararlı sürüm kontrol ediliyor…</div>
 <p class="status">Sürüm <b id="version">—</b> · Yayın <b id="published">—</b> · Windows 10/11, 64 bit</p>
+<p class="status" id="shaLine" hidden>SHA-256: <code id="sha256"></code></p>
 </section>
 <div class="grid">
 <section class="card">
@@ -63,6 +64,7 @@ async function load(){
   const rows=await r.json();if(!Array.isArray(rows)||!rows.length)throw new Error('İndirilebilir stable sürüm bulunamadı.');
   const rel=[...rows].sort(cmp)[0];document.querySelector('#version').textContent='v'+rel.version;
   document.querySelector('#published').textContent=rel.published_at?new Date(rel.published_at).toLocaleDateString('tr-TR'):'—';
+  if(/^[a-f0-9]{64}$/i.test(String(rel.sha256||''))){document.querySelector('#sha256').textContent=rel.sha256;document.querySelector('#shaLine').hidden=false;}
   const prefix=SUPABASE_URL+'/storage/v1/object/public/zayba-releases/';const url=String(rel.download_url||'');
   if(!url.startsWith(prefix)||!/\.exe$/i.test(new URL(url).pathname))throw new Error('İndirme adresi doğrulanamadı.');
   const b=document.querySelector('#downloadBtn');b.href=url;b.setAttribute('download','');b.removeAttribute('aria-disabled');
